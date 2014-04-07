@@ -1,56 +1,102 @@
-html {
-  font-size: 62.5%;
-}
+/* ===============================================
+   *******************  Reset  *******************
+   =============================================== */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+q {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 
 /* ===============================================
    *****************  Variables  *****************
    =============================================== */
 
-/* Breakpoint */
+/* Breakpoints */
 
 @mixin respond-to($breakpoint) {
     @media only screen and (max-width: $breakpoint + px) { @content; }
 }
 
-/* Fonts */
-
-$font-stack: "jaf-facitweb", Arial, "Helvetica Neue", Helvetica, sans-serif;
-$light: 300;
-$regular: 400;
-$bold: 700;
-
-@mixin font-size($size:1.6, $line: $size * 1.4){
-    font-size:   ($size * 10) + px;
-    line-height: ($line * 10) + px;
-    font-size:   $size + rem;
-	line-height: $line + rem;
+@mixin respond-to-min($breakpoint) {
+    @media only screen and (min-width: $breakpoint + px) { @content; }
 }
+
 
 /* Colors */
 
-@function black($opacity:1){
+@function black($opacity){
     @return rgba(0,0,0,$opacity)
 }
 
-@function white($opacity:1){
+@function white($opacity){
     @return rgba(255,255,255,$opacity)
 }
 
-$blue: rgb(37,170,225);
+$green: rgb(65,173,73);
 $red: rgb(239,65,61);
-$yellow: rgb(242,190,40);
-$green: rgb(57,181,74);
-$purple: rgb(178,97,235);
-$darkgrey: rgb(34,34,34);
-$lightgrey: rgb(88,88,90);
+$blue: rgb(39,170,225);
+$yellow: rgb(232,190,40);
+$purple: rgb(150,101,170);
+$darkgrey: rgb(40,40,40);
 
-/* Images */
 
-@mixin hide-text{
-    overflow:hidden;
-    text-indent:-9000px;
-    display:block;
+/* Fonts */
+
+@mixin headline-font($size) {
+		font-family: "proxima-nova-alt", "Helvetica Neue", "Arial", sans-serif;
+   		font-size: $size;
+   		line-height: 1.2;
+   		font-weight: 100;
 }
+
+@mixin body-font($size) {
+
+		font-family: "proxima-nova-alt", "Helvetica Neue", "Arial", sans-serif;
+		font-weight: 300;
+		font-style: normal;
+		font-size: $size;
+		line-height: 1.5;
+
+}
+
+.bold {font-weight: 700;}
+
 
 /* Transitions */
 
@@ -61,17 +107,32 @@ $lightgrey: rgb(88,88,90);
 	transition: all $time ease;
 }
 
+/* Other Variables */
+
+@mixin bgcover() {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 
 /* ===============================================
-   Global Styles
+   Global Body Styles
    =============================================== */
 
 body { 
 
-	font-family: $font-stack;
-	font-weight: $light;
-	@include font-size();
-	color: $lightgrey;
+	@include body-font(22px);
+	@include respond-to(1024) { font-size: 18px; }
+	@include respond-to(480) { font-size: 14px; }
+	width: 100%;
+
+}
+
+.content {
+
+	width: 85%;
+	margin: 0 auto;
 
 }
 
@@ -83,6 +144,43 @@ body {
 
 .clear:after {
     clear: both;
+}
+
+/* mixin(font-size, letter-spacing) */
+      
+h1 { 
+
+	@include headline-font(80px);
+	@include respond-to(1024) { font-size: 60px; }
+	@include respond-to(640) { font-size: 45px; }
+	@include respond-to(480) { font-size: 35px; }
+	
+}
+
+h2 {
+
+	@include headline-font(60px);
+
+}
+
+h3 { 
+
+	@include headline-font(44px);
+	margin-bottom: 10px;
+	
+}
+
+
+h4 { 
+
+	@include headline-font(36px);
+	
+}
+
+p {
+
+	margin-bottom: 20px;
+
 }
 
 .left {
@@ -99,202 +197,34 @@ body {
 
 
 /* ===============================================
-   Typography
+   Upper
    =============================================== */
 
-h1 {
-
-	@include font-size(12);
-	font-weight: $bold;
-
-}
-
-h2 {
-
-	@include font-size(8);
-	font-weight: $bold;
-
-}
-
-h3 {
-
-	@include font-size(6);
-	font-weight: $bold;
-
-}
-
-
-h4 {
-
-	@include font-size(4);
-	font-weight: $light;
-
-}
-
-h5 {
-
-	@include font-size(2.4);
-	font-weight: $light;
-
-}
-
-h6 {
-
-	@include font-size(1.2);
-	font-weight: $light;
-
-}
-
-.bold {
-
-	font-weight: $bold;
-
-}
-
-.light {
-
-	font-weight: $light;
-
-}
-
-
-/* ===============================================
-   Header
-   =============================================== */
-
-header {
+.upper {
 
 	width: 100%;
-	background: $blue;
-	color: white();
-	border-bottom: 1px black(0.1) solid;
-	
-	.wrapper {
-	
-		margin: 0 80px;
+	height: 800px;
+	background: image-url("temp-bg2.jpg") center center no-repeat;
+	@include bgcover();
+	color: white;
 		
-		.imua-logo {
-		
-			margin: 50px 0;
-		
-		}
-		
-		nav {
-		
-			margin: 50px 0;
-		
-			li {
-			
-				float: left;
-				margin-left: 100px;
-			
-			}
-		
-		}
-	
-	}
-	
-}
-
-
-/* ===============================================
-   Upper Content
-   =============================================== */
-
-.upper-content {
-
-	width: 100%;
-	background: $blue;
-	color: white();
-	padding: 120px 0px;
-	
-	.wrapper {
-	
-		margin: 0 125px;
-		
-		.greeting {
-		
-			width: 70%;
-			
-			h1 { text-align: left; }
-		}
-		
-		.current-points {
-		
-			width: 30%;
-			text-align: center;
-		
-		}
-	
-	}
-
-}
-
-
-/* ===============================================
-   Middle Content
-   =============================================== */
-
-.middle-content {
-
-	width: 100%;
-	background: white(1);
-	padding: 80px 0;
-	text-align: center;
-	
-	.wrapper {
-	
-		margin: 0 125px;
-	
-		.progress-bar {
-		
-			margin: 40px 0;
-		
-		}
-	
-	}
-	
-}
-
-
-/* ===============================================
-   Lower Content
-   =============================================== */
-
-.lower-content {
-
-	width: 100%;
-	
-	.ribbon {
+	.header {
 	
 		width: 100%;
-		color: white;
+		padding-top: 35px;
 		
-		.left {
+		.nav {
 		
-			width: 30%;
-			height: 100%;
-			text-align: center;
-			background: black(0.15);
+			margin: 0 auto;
 			
-			.status {
-			
-				margin: 100px 0;
-			
-			}
-		
-		}
-		
-		.right {
-		
-			width: 70%;
-
 			ul {
-							
+			
+				padding-top: 10px;
+				
 				li {
 			
 					float: left;
-					width: 300px;
+					padding-left: 50px;
 				
 				}
 			
@@ -304,25 +234,357 @@ header {
 	
 	}
 	
-	.gpa { background: $green; }
-	.extracurriculars { background: $red; }
-	.service { background: $yellow; }
-	.PDU { background: $blue; }
-	.testing { background: $purple; }
-
+	.headline {
+	
+		width: 100%;
+		text-align: center;
+		margin-top: 220px;
+		
+		.grey {
+		
+			color: #aaa;
+			margin-top: 10px;
+		
+		}
+		
+		.button {
+		
+			border: 1px solid #fff;
+			width: 200px;
+			padding: 15px 0;
+			margin: 0 auto;
+			margin-top: 40px;
+		
+		}
+	
+	}
+	
 }
-
 
 
 /* ===============================================
-   Footer
+   Lower
    =============================================== */
 
-footer {
+.lower {
 
-	text-align: center;
-	padding: 100px 0;
-	background: $darkgrey;
-	color: white;
+	padding: 125px 0px 0px 0px;
+		
+	.what-we-do {
+	
+		width: 85%;
+		margin: 0 auto;
+		margin-bottom: 80px;
 
-}
+		.callout {
+		
+			width: 70%;
+			margin-bottom: 40px;
+
+			.text {
+				
+				margin-top: 25px;
+				padding: 50px;
+				
+				h4 {
+				
+					padding-bottom: 20px;
+				
+				}
+			
+			}
+		
+		}
+		
+		.graphic {
+		
+			width: 30%;
+			text-align: center;
+			
+			img {
+			
+				width: 100%;
+				height: auto;
+				max-width: 300px;
+			
+			}
+		
+		}
+	
+	}
+	
+	.title {
+	
+		text-align: center;
+		padding: 160px 0;
+		color: white;
+			
+	}
+	
+	.blue {
+	
+		background: $blue;
+	
+	}
+	
+	.attributes {
+	
+		text-align: center;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		padding: 125px 0;
+		width: 100%;
+		
+		.question {
+		
+			margin-bottom: 30px;
+		
+		}
+		
+		.attribute {
+		
+			width: 50%;
+			float: left;
+			margin: 0 auto;
+			
+			.wrapper {
+			
+				padding: 40px;
+			
+			}
+		
+			img {
+			
+				width: 30%;
+				height: auto;
+				margin-bottom: 15px;
+			
+			}
+		
+		}
+		
+		.attribute-alt {
+		
+			width: 50%;
+			margin: 0 auto;
+			
+			.wrapper {
+			
+				padding: 40px;
+			
+			}
+		
+			img {
+			
+				width: 30%;
+				height: auto;
+				margin-bottom: 15px;
+			
+			}
+		
+		}
+
+	
+	} //attributes
+	
+	.milestones {
+	
+		text-align: center;
+		padding: 125px 0;
+		width: 100%;
+		
+		.milestones-img {
+		
+			width: 100%;
+			text-align: right;
+			
+			img {
+			
+				width: 100%;
+			
+			}
+		
+		}
+	
+	} //milestones
+	
+	.mentors {
+	
+		border-top: 1px solid #ccc;
+		padding: 125px 0;
+		width: 100%;
+		
+		.text {
+		
+			width: 60%;
+			text-align: right;
+			
+			.inner {
+			
+				padding: 60px;
+			
+			}
+		
+		}
+		
+		.graphic {
+		
+			width: 40%;
+			text-align: center;
+			
+			img {
+			
+				width: 80%;
+				height: auto;
+				max-width: 550px;
+			
+			}
+		
+		}
+
+	} //mentors
+
+	.tool {
+	
+		background: $darkgrey;
+		color: white;
+		padding: 175px 0;
+		
+		.section-title {
+		
+			text-align: center;
+			margin-bottom: 80px;
+		
+		}
+		
+		.topper {
+		
+			margin-bottom: 150px;
+		
+			.left-img, .right-img {
+			
+				width: 25%;
+				
+				img {
+				
+					width: 100%;
+					height: auto;
+					max-width: 500px;
+				
+				}
+			
+			}
+		
+			.left-img {
+		
+				float: left;
+			
+			}
+			
+			.imua-logo {
+			
+				width: 50%;
+				text-align: center;
+				float: left;
+				
+				img {
+				
+					width: 60%;
+					height: auto;
+					max-width: 551px;
+					margin-bottom: 20px;
+				
+				}
+			
+			}
+			
+			.right-img {
+			
+				float: right;
+			
+			}
+		
+		} //topper
+		
+		.progress {
+		
+			padding: 100px 0;
+			border-top: 1px solid #555;
+		
+			.scholar-chart {
+			
+				width: 40%;
+				float: left;
+				
+				img {
+				
+					width: 100%;
+					height: auto;
+					max-width: 700px;
+				
+				}
+			
+			}
+			
+			.text {
+			
+				width: 60%;
+				float: left;
+				
+				.inner {
+				
+					padding: 100px;
+				
+				}
+			
+			}
+		
+		} //progress
+		
+		.communication {
+		
+			padding: 100px 0;
+			border-top: 1px solid #555;
+			border-bottom: 1px solid #555;
+			margin-bottom: 50px;
+		
+			.phones {
+			
+				width: 50%;
+				float: left;
+				
+				img {
+				
+					width: 100%;
+					height: auto;
+					max-width: 700px;
+				
+				}
+			
+			}
+			
+			.text {
+			
+				width: 50%;
+				float: left;
+				
+				.inner {
+				
+					padding: 100px 0px 100px 100px;
+				
+				}
+			
+			}
+		
+		} //progress
+		
+		.display {
+		
+			text-align: center;
+		
+		}
+
+	
+	}
+
+} //lower
