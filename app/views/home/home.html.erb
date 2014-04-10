@@ -16,9 +16,9 @@
     			
     				<ul>
     				
-    					<li>Get Involved</li>
-    					<li>Stay Updated</li>
-    					<li>Donate Now</li>
+    					<li data-toggle="modal" data-target="#getInvolvedModal">Get Involved</li>
+    					<li class="scroll-start" scroll-target="#stayUpdated">Stay Updated</li>
+    					<li data-toggle="modal" data-target="#donateNowModal">Donate Now</li>
     				
     				</ul>
     			
@@ -33,7 +33,7 @@
     		<h1><span class="bold">So much more</span> than just a scholarship.</h1>
 			<h5 class="grey">We believe that kids attending under-resourced schools in low-income communities need more support & guidance than simply financial aid.</h5> 
     		
-    		<div class="button">
+    		<div class="button scroll-start" scroll-target="#slide1">
     		
     			Find Out More
     		
@@ -45,7 +45,7 @@
 	    
 </div><!-- /upper -->
 
-<div class="lower">
+<div id="slide1" class="lower">
 	
 	<div class="content">
 	
@@ -226,7 +226,7 @@ and selecting fit-appropriate colleges.</p>
 	
 		<div class="content">
 		
-			<div class="progress clear">
+			<div class="track-progress clear">
 							
 				<div class="scholar-chart">
 				
@@ -270,5 +270,73 @@ and selecting fit-appropriate colleges.</p>
 		</div><!-- /content -->
 	
 	</div><!-- /tool -->
+
+	<div class="footer">
+
+		<div class="content">
+
+			<div id="stayUpdated" class="updated section">
+				<div class="text">
+					<h3 class="">Stay updated</h3>
+					<div>We are constantly adapting and improving our program and tool. If you want to stay current on what we are doing, sign up to receive email updates.</div>
+				</div>
+
+				<!-- Begin MailChimp Signup Form -->				
+				<div id="mc_embed_signup">
+					<form action="http://bbnow.us5.list-manage.com/subscribe/post?u=e08a3f7c7c61eaa78ad746184&amp;id=77765b0239" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>						
+						
+						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required style="margin: auto; margin-bottom: 10px; border-radius: 4px;">
+					    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <div style="position: absolute; left: -5000px;">
+					    	<input type="text" name="b_e08a3f7c7c61eaa78ad746184_77765b0239" value="" style="margin: auto;">
+					    </div>
+						<div class="clear">
+							<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="margin: auto;">
+						</div>
+					</form>
+				</div>
+
+				<!--End mc_embed_signup-->
+			</div>				
+
+		</div> <!-- /content -->
+	</div> <!-- /footer -->
 	
 </div><!-- /lower -->
+
+<div class="modal fade" id="getInvolvedModal">
+  <div class="modal-dialog">
+    <div class="modal-content">      
+      <div class="modal-body">
+        <div id="getInvolved" class="involved section">
+			<div class="text">
+				<h3 class="">Get involved</h3>
+				<div>We are young and very passionate about we do but can't do this alone. If you would like to get involved or can help us out in any way, don't hesitate to send us an <a href="mailto:wcsf.directors@gmail.com">email!</a></div>
+			</div>
+		</div>
+      </div>     
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="donateNowModal">
+  <div class="modal-dialog">
+    <div class="modal-content">      
+      <div class="modal-body">
+        <div id="donateNow" class="donate section">
+			<div class="text">
+				<h3 class="">Donate now</h3>
+				<div style="padding-bottom: 20px;">Just like any other non-profit, your generous donations help us immensely. If you really like what we are doing and want to support us financially, click below to make a tax deductible donation to our program. </div>
+
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="text-align: center;">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="KN4DCFQ9BR7B6">
+					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="" width="1" height="1">
+				</form>
+			</div>
+		</div>
+      </div>     
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

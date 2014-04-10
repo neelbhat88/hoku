@@ -224,8 +224,12 @@ p {
 				li {
 			
 					float: left;
-					padding-left: 50px;
-				
+					margin-left: 50px;
+					cursor: pointer;
+
+					&:hover {
+						border-bottom: 1px solid white;
+					}
 				}
 			
 			}
@@ -254,7 +258,7 @@ p {
 			padding: 15px 0;
 			margin: 0 auto;
 			margin-top: 40px;
-		
+			cursor: pointer;
 		}
 	
 	}
@@ -448,7 +452,7 @@ p {
 	
 		background: $darkgrey;
 		color: white;
-		padding: 175px 0;
+		padding: 175px 0 0 0;
 		
 		.section-title {
 		
@@ -506,7 +510,7 @@ p {
 		
 		} //topper
 		
-		.progress {
+		.track-progress {
 		
 			padding: 100px 0;
 			border-top: 1px solid #555;
@@ -545,8 +549,7 @@ p {
 		
 			padding: 100px 0;
 			border-top: 1px solid #555;
-			border-bottom: 1px solid #555;
-			margin-bottom: 50px;
+			border-bottom: 1px solid #555;			
 		
 			.phones {
 			
@@ -588,3 +591,23 @@ p {
 	}
 
 } //lower
+
+/* ===============================================
+   Footer
+   =============================================== */
+
+.footer {	
+
+	.section {		
+		margin-bottom: 25px;
+
+		.text { 
+
+			padding: 80px 0 40px 0;
+			text-align: center;
+
+		}
+
+	}
+
+} //footer
