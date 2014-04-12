@@ -160,12 +160,18 @@ h1 {
 h2 {
 
 	@include headline-font(60px);
+	@include respond-to(1024) { font-size: 50px; }
+	@include respond-to(640) { font-size: 40px; }
+	@include respond-to(480) { font-size: 35px; }
 
 }
 
 h3 { 
 
 	@include headline-font(44px);
+	@include respond-to(1024) { font-size: 36px; }
+	@include respond-to(640) { font-size: 28px; }
+	@include respond-to(480) { font-size: 24px; }
 	margin-bottom: 10px;
 	
 }
@@ -174,6 +180,9 @@ h3 {
 h4 { 
 
 	@include headline-font(36px);
+	@include respond-to(1024) { font-size: 28px; }
+	@include respond-to(640) { font-size: 24px; }
+	@include respond-to(480) { font-size: 18px; }
 	
 }
 
@@ -203,7 +212,11 @@ p {
 .upper {
 
 	width: 100%;
+	
 	height: 800px;
+	@include respond-to(640) { height: 650px; }
+	@include respond-to(480) { height: 500px; }
+
 	background: image-url("temp-bg2.jpg") center center no-repeat;
 	@include bgcover();
 	color: white;
@@ -224,7 +237,11 @@ p {
 				li {
 			
 					float: left;
+					
 					margin-left: 50px;
+					@include respond-to(640) { margin-left: 30px; }
+					@include respond-to(480) { margin-left: 10px; }
+					
 					cursor: pointer;
 
 					&:hover {
@@ -242,7 +259,10 @@ p {
 	
 		width: 100%;
 		text-align: center;
+		
 		margin-top: 220px;
+		@include respond-to(640) { margin-top: 100px; }
+		@include respond-to(480) { margin-top: 50px; }
 		
 		.grey {
 		
@@ -273,22 +293,36 @@ p {
 .lower {
 
 	padding: 125px 0px 0px 0px;
+	@include respond-to(640) { padding: 50px 0 0 0; }
 		
 	.what-we-do {
 	
 		width: 85%;
 		margin: 0 auto;
+
 		margin-bottom: 80px;
+		@include respond-to(640) { margin-bottom: 50px; }
 
 		.callout {
 		
 			width: 70%;
 			margin-bottom: 40px;
 
+			@include respond-to(640) { 
+				margin: auto; 
+				float: none;
+				text-align: center;
+			}
+
 			.text {
 				
 				margin-top: 25px;
 				padding: 50px;
+				@include respond-to(1280) { 
+					margin-top: 0px;
+					padding: 0 50px;
+				}
+				@include respond-to(640) { padding: 20px 0; }
 				
 				h4 {
 				
@@ -304,6 +338,11 @@ p {
 		
 			width: 30%;
 			text-align: center;
+
+			@include respond-to(640) { 
+				margin: auto; 
+				float: none;
+			}
 			
 			img {
 			
@@ -336,7 +375,10 @@ p {
 		text-align: center;
 		border-top: 1px solid #ccc;
 		border-bottom: 1px solid #ccc;
+		
 		padding: 125px 0;
+		@include respond-to(640) { padding: 50px 0; }
+		
 		width: 100%;
 		
 		.question {
@@ -354,6 +396,7 @@ p {
 			.wrapper {
 			
 				padding: 40px;
+				@include respond-to(640) { padding: 10px; }
 			
 			}
 		
@@ -375,6 +418,7 @@ p {
 			.wrapper {
 			
 				padding: 40px;
+				@include respond-to(640) { padding: 10px; }
 			
 			}
 		
@@ -394,7 +438,10 @@ p {
 	.milestones {
 	
 		text-align: center;
+		
 		padding: 125px 0;
+		@include respond-to(640) { padding: 50px 0; }
+
 		width: 100%;
 		
 		.milestones-img {
@@ -415,17 +462,28 @@ p {
 	.mentors {
 	
 		border-top: 1px solid #ccc;
+		
 		padding: 125px 0;
+		@include respond-to(640) { padding: 50px 0; }
+
 		width: 100%;
 		
 		.text {
 		
-			width: 60%;
+			width: 60%;			
 			text-align: right;
+			@include respond-to(640) { 
+				width: 80%;
+				text-align: center;
+				margin: auto;
+				float: none;
+			}
 			
 			.inner {
 			
 				padding: 60px;
+				@include respond-to(1280) { padding: 0 60px; }
+				@include respond-to(640) { padding: 0px; }
 			
 			}
 		
@@ -435,6 +493,10 @@ p {
 		
 			width: 40%;
 			text-align: center;
+			@include respond-to(640) { 
+				margin: auto; 
+				float: none;
+			}
 			
 			img {
 			
@@ -453,6 +515,7 @@ p {
 		background: $darkgrey;
 		color: white;
 		padding: 175px 0 0 0;
+		@include respond-to(640) { padding: 100px 0 0 0; }
 		
 		.section-title {
 		
@@ -464,6 +527,7 @@ p {
 		.topper {
 		
 			margin-bottom: 150px;
+			@include respond-to(640) { margin-bottom: 100px; }
 		
 			.left-img, .right-img {
 			
@@ -513,12 +577,18 @@ p {
 		.track-progress {
 		
 			padding: 100px 0;
+			@include respond-to(640) { padding: 50px 0; }
+
 			border-top: 1px solid #555;
 		
 			.scholar-chart {
 			
 				width: 40%;
 				float: left;
+				@include respond-to(640) { 
+					float: none;
+					margin: auto;					 
+				}
 				
 				img {
 				
@@ -534,10 +604,18 @@ p {
 			
 				width: 60%;
 				float: left;
+				@include respond-to(640) { 
+					float: none;
+					margin: auto;
+					text-align: center;
+					width: 80%;	
+				}
 				
 				.inner {
 				
 					padding: 100px;
+					@include respond-to(1280) { padding: 0 60px; }
+					@include respond-to(640) { padding: 20px 0 0 0; }
 				
 				}
 			
@@ -548,6 +626,8 @@ p {
 		.communication {
 		
 			padding: 100px 0;
+			@include respond-to(640) { padding: 50px 0; }
+
 			border-top: 1px solid #555;
 			border-bottom: 1px solid #555;			
 		
@@ -555,6 +635,10 @@ p {
 			
 				width: 50%;
 				float: left;
+				@include respond-to(640) { 
+					float: none;
+					margin: auto;
+				}
 				
 				img {
 				
@@ -570,10 +654,18 @@ p {
 			
 				width: 50%;
 				float: left;
+				@include respond-to(640) { 
+					float: none;
+					margin: auto;
+					text-align: center;
+					width: 80%	
+				}
 				
 				.inner {
 				
 					padding: 100px 0px 100px 100px;
+					@include respond-to(1280) { padding: 0 0 60px 60px; }
+					@include respond-to(640) { padding: 0 0 10px 0; }
 				
 				}
 			
