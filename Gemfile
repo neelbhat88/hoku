@@ -7,9 +7,10 @@ gem 'rails', '3.2.11'
 
 gem 'pg'
 gem 'thin'
+gem 'unicorn'
 
-group :development do	
-	gem 'debugger'
+group :development do
+	#gem 'debugger'
 end
 
 # Gems used only for assets and not required
