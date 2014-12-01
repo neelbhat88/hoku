@@ -1,7 +1,7 @@
 /* ===============================================
    *******************  Reset  *******************
    =============================================== */
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -75,6 +75,10 @@ $yellow: rgb(232,190,40);
 $purple: rgb(150,101,170);
 $darkgrey: rgb(40,40,40);
 
+.font-blue {
+  color: $blue;
+}
+
 
 /* Fonts */
 
@@ -120,7 +124,7 @@ $darkgrey: rgb(40,40,40);
    Global Body Styles
    =============================================== */
 
-body { 
+body {
 
 	@include body-font(22px);
 	@include respond-to(1024) { font-size: 18px; }
@@ -147,14 +151,14 @@ body {
 }
 
 /* mixin(font-size, letter-spacing) */
-      
-h1 { 
+
+h1 {
 
 	@include headline-font(80px);
 	@include respond-to(1024) { font-size: 60px; }
 	@include respond-to(640) { font-size: 45px; }
 	@include respond-to(480) { font-size: 35px; }
-	
+
 }
 
 h2 {
@@ -166,24 +170,24 @@ h2 {
 
 }
 
-h3 { 
+h3 {
 
 	@include headline-font(44px);
 	@include respond-to(1024) { font-size: 36px; }
 	@include respond-to(640) { font-size: 28px; }
 	@include respond-to(480) { font-size: 24px; }
 	margin-bottom: 10px;
-	
+
 }
 
 
-h4 { 
+h4 {
 
 	@include headline-font(36px);
 	@include respond-to(1024) { font-size: 28px; }
 	@include respond-to(640) { font-size: 24px; }
 	@include respond-to(480) { font-size: 18px; }
-	
+
 }
 
 p {
@@ -204,6 +208,9 @@ p {
 
 }
 
+.center {
+  text-align: center;
+}
 
 /* ===============================================
    Upper
@@ -212,7 +219,7 @@ p {
 .upper {
 
 	width: 100%;
-	
+
 	height: 800px;
 	@include respond-to(640) { height: 650px; }
 	@include respond-to(480) { height: 500px; }
@@ -220,59 +227,59 @@ p {
 	background: image-url("temp-bg2.jpg") center center no-repeat;
 	@include bgcover();
 	color: white;
-		
+
 	.header {
-	
+
 		width: 100%;
 		padding-top: 35px;
-		
+
 		.nav {
-		
+
 			margin: 0 auto;
-			
+
 			ul {
-			
+
 				padding-top: 10px;
-				
+
 				li {
-			
+
 					float: left;
-					
+
 					margin-left: 50px;
 					@include respond-to(640) { margin-left: 30px; }
 					@include respond-to(480) { margin-left: 10px; }
-					
+
 					cursor: pointer;
 
 					&:hover {
 						border-bottom: 1px solid white;
 					}
 				}
-			
+
 			}
-					
+
 		}
-	
+
 	}
-	
+
 	.headline {
-	
+
 		width: 100%;
 		text-align: center;
-		
+
 		margin-top: 220px;
 		@include respond-to(640) { margin-top: 100px; }
 		@include respond-to(480) { margin-top: 50px; }
-		
+
 		.grey {
-		
+
 			color: #aaa;
 			margin-top: 10px;
-		
+
 		}
-		
+
 		.button {
-		
+
 			border: 1px solid #fff;
 			width: 200px;
 			padding: 15px 0;
@@ -280,9 +287,9 @@ p {
 			margin-top: 40px;
 			cursor: pointer;
 		}
-	
+
 	}
-	
+
 }
 
 
@@ -294,9 +301,9 @@ p {
 
 	padding: 125px 0px 0px 0px;
 	@include respond-to(640) { padding: 50px 0 0 0; }
-		
+
 	.what-we-do {
-	
+
 		width: 85%;
 		margin: 0 auto;
 
@@ -304,382 +311,382 @@ p {
 		@include respond-to(640) { margin-bottom: 50px; }
 
 		.callout {
-		
+
 			width: 70%;
 			margin-bottom: 40px;
 
-			@include respond-to(640) { 
-				margin: auto; 
+			@include respond-to(640) {
+				margin: auto;
 				float: none;
 				text-align: center;
 			}
 
 			.text {
-				
+
 				margin-top: 25px;
 				padding: 50px;
-				@include respond-to(1280) { 
+				@include respond-to(1280) {
 					margin-top: 0px;
 					padding: 0 50px;
 				}
 				@include respond-to(640) { padding: 20px 0; }
-				
+
 				h4 {
-				
+
 					padding-bottom: 20px;
-				
+
 				}
-			
+
 			}
-		
+
 		}
-		
+
 		.graphic {
-		
+
 			width: 30%;
 			text-align: center;
 
-			@include respond-to(640) { 
-				margin: auto; 
+			@include respond-to(640) {
+				margin: auto;
 				float: none;
 			}
-			
+
 			img {
-			
+
 				width: 100%;
 				height: auto;
 				max-width: 300px;
-			
+
 			}
-		
+
 		}
-	
+
 	}
-	
+
 	.title {
-	
+
 		text-align: center;
 		padding: 160px 0;
 		color: white;
-			
+
 	}
-	
+
 	.blue {
-	
+
 		background: $blue;
-	
+
 	}
-	
+
 	.attributes {
-	
+
 		text-align: center;
 		border-top: 1px solid #ccc;
 		border-bottom: 1px solid #ccc;
-		
+
 		padding: 125px 0;
 		@include respond-to(640) { padding: 50px 0; }
-		
+
 		width: 100%;
-		
+
 		.question {
-		
+
 			margin-bottom: 30px;
-		
+
 		}
-		
+
 		.attribute {
-		
+
 			width: 50%;
 			float: left;
 			margin: 0 auto;
-			
+
 			.wrapper {
-			
+
 				padding: 40px;
 				@include respond-to(640) { padding: 10px; }
-			
+
 			}
-		
+
 			img {
-			
+
 				width: 30%;
 				height: auto;
 				margin-bottom: 15px;
-			
+
 			}
-		
+
 		}
-		
+
 		.attribute-alt {
-		
+
 			width: 50%;
 			margin: 0 auto;
-			
+
 			.wrapper {
-			
+
 				padding: 40px;
 				@include respond-to(640) { padding: 10px; }
-			
+
 			}
-		
+
 			img {
-			
+
 				width: 30%;
 				height: auto;
 				margin-bottom: 15px;
-			
+
 			}
-		
+
 		}
 
-	
+
 	} //attributes
-	
+
 	.milestones {
-	
+
 		text-align: center;
-		
+
 		padding: 125px 0;
 		@include respond-to(640) { padding: 50px 0; }
 
 		width: 100%;
-		
+
 		.milestones-img {
-		
+
 			width: 100%;
 			text-align: right;
-			
+
 			img {
-			
+
 				width: 100%;
-			
+
 			}
-		
+
 		}
-	
+
 	} //milestones
-	
+
 	.mentors {
-	
+
 		border-top: 1px solid #ccc;
-		
+
 		padding: 125px 0;
 		@include respond-to(640) { padding: 50px 0; }
 
 		width: 100%;
-		
+
 		.text {
-		
-			width: 60%;			
+
+			width: 60%;
 			text-align: right;
-			@include respond-to(640) { 
+			@include respond-to(640) {
 				width: 80%;
 				text-align: center;
 				margin: auto;
 				float: none;
 			}
-			
+
 			.inner {
-			
+
 				padding: 60px;
 				@include respond-to(1280) { padding: 0 60px; }
 				@include respond-to(640) { padding: 0px; }
-			
+
 			}
-		
+
 		}
-		
+
 		.graphic {
-		
+
 			width: 40%;
 			text-align: center;
-			@include respond-to(640) { 
-				margin: auto; 
+			@include respond-to(640) {
+				margin: auto;
 				float: none;
 			}
-			
+
 			img {
-			
+
 				width: 80%;
 				height: auto;
 				max-width: 550px;
-			
+
 			}
-		
+
 		}
 
 	} //mentors
 
 	.tool {
-	
+
 		background: $darkgrey;
 		color: white;
 		padding: 175px 0 0 0;
 		@include respond-to(640) { padding: 100px 0 0 0; }
-		
+
 		.section-title {
-		
+
 			text-align: center;
 			margin-bottom: 80px;
-		
+
 		}
-		
+
 		.topper {
-		
+
 			margin-bottom: 150px;
 			@include respond-to(640) { margin-bottom: 100px; }
-		
+
 			.left-img, .right-img {
-			
+
 				width: 25%;
-				
+
 				img {
-				
+
 					width: 100%;
 					height: auto;
 					max-width: 500px;
-				
+
 				}
-			
+
 			}
-		
+
 			.left-img {
-		
+
 				float: left;
-			
+
 			}
-			
+
 			.imua-logo {
-			
+
 				width: 50%;
 				text-align: center;
 				float: left;
-				
+
 				img {
-				
+
 					width: 60%;
 					height: auto;
 					max-width: 551px;
 					margin-bottom: 20px;
-				
+
 				}
-			
+
 			}
-			
+
 			.right-img {
-			
+
 				float: right;
-			
+
 			}
-		
+
 		} //topper
-		
+
 		.track-progress {
-		
+
 			padding: 100px 0;
 			@include respond-to(640) { padding: 50px 0; }
 
 			border-top: 1px solid #555;
-		
+
 			.scholar-chart {
-			
+
 				width: 40%;
 				float: left;
-				@include respond-to(640) { 
+				@include respond-to(640) {
 					float: none;
-					margin: auto;					 
+					margin: auto;
 				}
-				
+
 				img {
-				
+
 					width: 100%;
 					height: auto;
 					max-width: 700px;
-				
+
 				}
-			
+
 			}
-			
+
 			.text {
-			
+
 				width: 60%;
 				float: left;
-				@include respond-to(640) { 
+				@include respond-to(640) {
 					float: none;
 					margin: auto;
 					text-align: center;
-					width: 80%;	
+					width: 80%;
 				}
-				
+
 				.inner {
-				
+
 					padding: 100px;
 					@include respond-to(1280) { padding: 0 60px; }
 					@include respond-to(640) { padding: 20px 0 0 0; }
-				
+
 				}
-			
+
 			}
-		
+
 		} //progress
-		
+
 		.communication {
-		
+
 			padding: 100px 0;
 			@include respond-to(640) { padding: 50px 0; }
 
 			border-top: 1px solid #555;
-			border-bottom: 1px solid #555;			
-		
+			border-bottom: 1px solid #555;
+
 			.phones {
-			
+
 				width: 50%;
 				float: left;
-				@include respond-to(640) { 
+				@include respond-to(640) {
 					float: none;
 					margin: auto;
 				}
-				
+
 				img {
-				
+
 					width: 100%;
 					height: auto;
 					max-width: 700px;
-				
+
 				}
-			
+
 			}
-			
+
 			.text {
-			
+
 				width: 50%;
 				float: left;
-				@include respond-to(640) { 
+				@include respond-to(640) {
 					float: none;
 					margin: auto;
 					text-align: center;
-					width: 80%	
+					width: 80%
 				}
-				
+
 				.inner {
-				
+
 					padding: 100px 0px 100px 100px;
 					@include respond-to(1280) { padding: 0 0 60px 60px; }
 					@include respond-to(640) { padding: 0 0 10px 0; }
-				
+
 				}
-			
+
 			}
-		
+
 		} //progress
-		
+
 		.display {
-		
+
 			text-align: center;
-		
+
 		}
 
-	
+
 	}
 
 } //lower
@@ -688,12 +695,12 @@ p {
    Footer
    =============================================== */
 
-.footer {	
+.footer {
 
-	.section {		
+	.section {
 		margin-bottom: 25px;
 
-		.text { 
+		.text {
 
 			padding: 80px 0 40px 0;
 			text-align: center;
