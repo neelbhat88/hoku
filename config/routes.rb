@@ -1,5 +1,9 @@
 Hoku::Application.routes.draw do
   get "home/home"
+  get "mission" => 'home#mission'
+  get "story" => 'home#story'
+  get "team" => 'home#team'
+  get "involvement" => 'home#involvement'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

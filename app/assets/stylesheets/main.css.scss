@@ -22,7 +22,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   line-height: 1; }
 
-ol, ul {
+ol {
   list-style: none; }
 
 blockquote, q {
@@ -213,6 +213,22 @@ p {
 }
 
 /* ===============================================
+   Header
+   =============================================== */
+header {
+
+  min-height: 75px !important;
+
+  padding: 10px;
+
+  .navHeaderCollapse {
+    margin-top: 13px;
+  }
+
+}
+
+
+/* ===============================================
    Upper
    =============================================== */
 
@@ -220,9 +236,9 @@ p {
 
 	width: 100%;
 
-	height: 800px;
-	@include respond-to(640) { height: 650px; }
-	@include respond-to(480) { height: 500px; }
+	height: 500px;
+	@include respond-to(640) { height: 400px; }
+	@include respond-to(480) { height: 350px; }
 
 	background: image-url("temp-bg2.jpg") center center no-repeat;
 	@include bgcover();
@@ -267,9 +283,10 @@ p {
 		width: 100%;
 		text-align: center;
 
-		margin-top: 220px;
-		@include respond-to(640) { margin-top: 100px; }
-		@include respond-to(480) { margin-top: 50px; }
+    padding-top: 80px;
+		margin-top: 80px;
+		@include respond-to(640) { padding-top: 50px; margin-top: 50px; }
+		@include respond-to(480) { padding-top: 50px; margin-top: 50px; }
 
 		.grey {
 
@@ -278,15 +295,24 @@ p {
 
 		}
 
-		.button {
+    .button-container {
+      padding: 40px 20px;
 
-			border: 1px solid #fff;
-			width: 200px;
-			padding: 15px 0;
-			margin: 0 auto;
-			margin-top: 40px;
-			cursor: pointer;
-		}
+      a {
+        text-decoration: none;
+      }
+
+      .button {
+
+        color: white;
+        border: 1px solid #fff;
+        width: 200px;
+        padding: 15px;
+        margin: 0 auto;
+        margin-top: 40px;
+        cursor: pointer;
+      }
+    }
 
 	}
 
@@ -299,13 +325,28 @@ p {
 
 .lower {
 
-	padding: 125px 0px 0px 0px;
-	@include respond-to(640) { padding: 50px 0 0 0; }
+	padding: 75px 0px 0px 0px;
+	@include respond-to(640) { padding: 20px 0 0 0; }
+
+}
+
+.content-container {
+  padding: 180px 0px 0px 0px;
+  @include respond-to(640) { padding: 105px 0 0 0; }
+}
+
+.mission-container {
+  .mission-statement {
+    padding-bottom: 125px;
+  }
 
 	.what-we-do {
 
 		width: 85%;
 		margin: 0 auto;
+
+    border-top: 1px solid #ccc;
+    padding-top: 125px;
 
 		margin-bottom: 80px;
 		@include respond-to(640) { margin-bottom: 50px; }
@@ -689,7 +730,7 @@ p {
 
 	}
 
-} //lower
+} //mission-container
 
 /* ===============================================
    Footer
