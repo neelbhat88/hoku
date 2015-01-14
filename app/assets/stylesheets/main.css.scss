@@ -42,671 +42,613 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+  /* ===============================================
+  *****************  Variables  *****************
+  =============================================== */
 
-/* ===============================================
-   *****************  Variables  *****************
-   =============================================== */
+  /* Breakpoints */
 
-/* Breakpoints */
-
-@mixin respond-to($breakpoint) {
+  @mixin respond-to($breakpoint) {
     @media only screen and (max-width: $breakpoint + px) { @content; }
-}
+  }
 
-@mixin respond-to-min($breakpoint) {
+  @mixin respond-to-min($breakpoint) {
     @media only screen and (min-width: $breakpoint + px) { @content; }
-}
+  }
 
 
-/* Colors */
+  /* Colors */
 
-@function black($opacity){
+  @function black($opacity){
     @return rgba(0,0,0,$opacity)
-}
+  }
 
-@function white($opacity){
+  @function white($opacity){
     @return rgba(255,255,255,$opacity)
-}
+  }
 
-$green: rgb(65,173,73);
-$red: rgb(239,65,61);
-$blue: rgb(39,170,225);
-$yellow: rgb(232,190,40);
-$purple: rgb(150,101,170);
-$darkgrey: rgb(40,40,40);
-
-.font-blue {
-  color: $blue;
-}
+  $green: rgb(65,173,73);
+  $red: rgb(239,65,61);
+  $blue: rgb(39,170,225);
+  $yellow: rgb(232,190,40);
+  $purple: rgb(150,101,170);
+  $darkgrey: rgb(40,40,40);
 
 
-/* Fonts */
+  /* Fonts */
 
-@mixin headline-font($size) {
-		font-family: "proxima-nova-alt", "Helvetica Neue", "Arial", sans-serif;
-   		font-size: $size;
-   		line-height: 1.2;
-   		font-weight: 100;
-}
+  @mixin headline-font($size) {
+    font-family: "proxima-nova-alt", "Helvetica Neue", "Arial", sans-serif;
+    font-size: $size;
+    line-height: 1.2;
+    font-weight: 100;
+  }
 
-@mixin body-font($size) {
+  @mixin body-font($size) {
 
-		font-family: "proxima-nova-alt", "Helvetica Neue", "Arial", sans-serif;
-		font-weight: 300;
-		font-style: normal;
-		font-size: $size;
-		line-height: 1.5;
+    font-family: "proxima-nova-alt", "Helvetica Neue", "Arial", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: $size;
+    line-height: 1.5;
 
-}
+  }
 
-.bold {font-weight: 700;}
+  .bold {font-weight: 700;}
 
 
-/* Transitions */
+  /* Transitions */
 
-@mixin trans($time) {
-	-webkit-transition: all $time ease;
-	-moz-transition: all $time ease;
-	-o-transition: all $time ease;
-	transition: all $time ease;
-}
+  @mixin trans($time) {
+    -webkit-transition: all $time ease;
+    -moz-transition: all $time ease;
+    -o-transition: all $time ease;
+    transition: all $time ease;
+  }
 
-/* Other Variables */
+  /* Other Variables */
 
-@mixin bgcover() {
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
+  @mixin bgcover() {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
-/* ===============================================
-   Global Body Styles
-   =============================================== */
+  @mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+  }
 
-body {
+  /* ===============================================
+  Global Body Styles
+  =============================================== */
 
-	@include body-font(22px);
-	@include respond-to(1024) { font-size: 18px; }
-	@include respond-to(480) { font-size: 14px; }
-	width: 100%;
+  body {
 
-}
+    @include body-font(22px);
+    @include respond-to(1024) { font-size: 18px; }
+    @include respond-to(480) { font-size: 14px; }
+    width: 100%;
 
-.content {
+  }
 
-	width: 85%;
-	margin: 0 auto;
+  .content {
 
-}
+    width: 85%;
+    margin: 0 auto;
 
-.clear:before,
-.clear:after {
+  }
+
+  .clear:before,
+  .clear:after {
     content: " ";
     display: table;
-}
+  }
 
-.clear:after {
+  .clear:after {
     clear: both;
-}
+  }
 
-/* mixin(font-size, letter-spacing) */
+  /* mixin(font-size, letter-spacing) */
 
-h1 {
+  h1 {
 
-	@include headline-font(80px);
-	@include respond-to(1024) { font-size: 60px; }
-	@include respond-to(640) { font-size: 45px; }
-	@include respond-to(480) { font-size: 35px; }
+    @include headline-font(80px);
+    @include respond-to(1500) { font-size: 60px; }
+    @include respond-to(1024) { font-size: 40px; }
+    @include respond-to(800) { font-size: 32px; }
+    @include respond-to(640) { font-size: 26px; }
+    @include respond-to(480) { font-size: 22px; }
 
-}
+  }
 
-h2 {
+  h2 {
 
-	@include headline-font(60px);
-	@include respond-to(1024) { font-size: 50px; }
-	@include respond-to(640) { font-size: 40px; }
-	@include respond-to(480) { font-size: 35px; }
+    @include headline-font(60px);
 
-}
+  }
 
-h3 {
+  h3 {
 
-	@include headline-font(44px);
-	@include respond-to(1024) { font-size: 36px; }
-	@include respond-to(640) { font-size: 28px; }
-	@include respond-to(480) { font-size: 24px; }
-	margin-bottom: 10px;
+    @include headline-font(44px);
+    @include respond-to(1500) { font-size: 38px; }
+    @include respond-to(1024) { font-size: 32px; }
+    @include respond-to(800) { font-size: 26px; }
+    @include respond-to(640) { font-size: 20px; }
+    @include respond-to(480) { font-size: 18px; }
+    margin-bottom: 10px;
 
-}
+  }
 
 
-h4 {
+  h4 {
 
-	@include headline-font(36px);
-	@include respond-to(1024) { font-size: 28px; }
-	@include respond-to(640) { font-size: 24px; }
-	@include respond-to(480) { font-size: 18px; }
+    @include headline-font(36px);
+    @include respond-to(1500) { font-size: 32px; }
+    @include respond-to(1024) { font-size: 26px; }
+    @include respond-to(800) { font-size: 20px; }
+    @include respond-to(640) { font-size: 18px; }
+    @include respond-to(480) { font-size: 16px; }
 
-}
+  }
 
-p {
+  p {
 
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 
-}
+  }
 
-.left {
+  .left {
 
-	float: left;
+    float: left;
 
-}
+  }
 
-.right {
+  .right {
 
-	float: right;
+    float: right;
 
-}
+  }
 
-.center {
-  text-align: center;
-}
 
-/* ===============================================
-   Upper
-   =============================================== */
+  /* ===============================================
+  Upper
+  =============================================== */
 
-.upper {
+  .static-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -9999;
+    background: url(kid-bg1.jpg) top center no-repeat;
+    @include bgcover();
+  }
 
-	width: 100%;
+  .upper {
 
-	height: 800px;
-	@include respond-to(640) { height: 650px; }
-	@include respond-to(480) { height: 500px; }
+    width: 100%;
+    height: 800px;
+    color: white;
 
-	background: image-url("temp-bg2.jpg") center center no-repeat;
-	@include bgcover();
-	color: white;
+    @include respond-to(1500) { height: 600px; }
+    @include respond-to(1024) { height: 400px; }
 
-	.header {
+    .header {
 
-		width: 100%;
-		padding-top: 35px;
+      width: 100%;
+      padding-top: 35px;
 
-		.nav {
+      .nav {
 
-			margin: 0 auto;
+        margin: 0 auto;
 
-			ul {
+        ul {
 
-				padding-top: 10px;
+          padding-top: 10px;
 
-				li {
+          li {
 
-					float: left;
+            float: left;
+            margin-left: 50px;
 
-					margin-left: 50px;
-					@include respond-to(640) { margin-left: 30px; }
-					@include respond-to(480) { margin-left: 10px; }
+            cursor: pointer;
 
-					cursor: pointer;
+            &:hover {
+              border-bottom: 1px solid white;
+            }
 
-					&:hover {
-						border-bottom: 1px solid white;
-					}
-				}
+            a {
+              color: #fff;
+              text-decoration: none;
 
-			}
+              cursor: pointer;
+            }
 
-		}
+          }
 
-	}
+        }
 
-	.headline {
+      }
 
-		width: 100%;
-		text-align: center;
+    }
 
-		margin-top: 220px;
-		@include respond-to(640) { margin-top: 100px; }
-		@include respond-to(480) { margin-top: 50px; }
+    .headline {
 
-		.grey {
+      width: 100%;
+      text-align: center;
+      margin-top: 220px;
 
-			color: #aaa;
-			margin-top: 10px;
+      @include respond-to(1500) { margin-top: 120px; }
+      @include respond-to(1024) { margin-top: 60px; }
+      @include respond-to(800) { margin-top: 50px; }
+      @include respond-to(640) { margin-top: 35px; }
 
-		}
+      .grey {
 
-		.button {
+        color: #aaa;
+        margin-top: 10px;
 
-			border: 1px solid #fff;
-			width: 200px;
-			padding: 15px 0;
-			margin: 0 auto;
-			margin-top: 40px;
-			cursor: pointer;
-		}
+      }
 
-	}
+      .button {
 
-}
+        background: $blue;
+        @include border-radius(20px);
+        font-size: 16px;
+        width: 160px;
+        padding: 6px 0;
+        margin: 0 auto;
+        margin-top: 40px;
 
+        @include respond-to(800) {
+          font-size: 14px;
+          width: 140px;
+          margin-top: 20px;
+        }
 
-/* ===============================================
-   Lower
-   =============================================== */
+        @include respond-to(640) {
+          font-size: 12px;
+          width: 120px;
+          margin-top: 10px;
+        }
 
-.lower {
+      }
 
-	padding: 125px 0px 0px 0px;
-	@include respond-to(640) { padding: 50px 0 0 0; }
+      .button-link {
+        color: #fff;
+        text-decoration: none;
 
-	.what-we-do {
+        cursor: pointer;
+      }
 
-		width: 85%;
-		margin: 0 auto;
+    }
 
-		margin-bottom: 80px;
-		@include respond-to(640) { margin-bottom: 50px; }
+  }
 
-		.callout {
 
-			width: 70%;
-			margin-bottom: 40px;
+  /* ===============================================
+  Lower
+  =============================================== */
 
-			@include respond-to(640) {
-				margin: auto;
-				float: none;
-				text-align: center;
-			}
+  .lower {
 
-			.text {
+    background: #fff;
 
-				margin-top: 25px;
-				padding: 50px;
-				@include respond-to(1280) {
-					margin-top: 0px;
-					padding: 0 50px;
-				}
-				@include respond-to(640) { padding: 20px 0; }
+    .section {
 
-				h4 {
+      width: 85%;
+      text-align: center;
+      margin: 0 auto;
+      padding: 100px 0;
 
-					padding-bottom: 20px;
+      .text {
+        margin-bottom: 60px;
+      }
 
-				}
+      img {
+        width: 100%;
+        max-width: 850px;
+      }
 
-			}
+      @include respond-to(1024) {
+        padding: 80px 0;
+        .text { margin-bottom: 40px; }
+      }
 
-		}
+      @include respond-to(800) {
+        padding: 60px 0;
+        .text { margin-bottom: 25px; }
+      }
 
-		.graphic {
+      @include respond-to(640) {
+        padding: 40px 0;
+        .text { margin-bottom: 25px; }
+      }
 
-			width: 30%;
-			text-align: center;
 
-			@include respond-to(640) {
-				margin: auto;
-				float: none;
-			}
+    }
 
-			img {
+    .title {
 
-				width: 100%;
-				height: auto;
-				max-width: 300px;
+      text-align: center;
+      padding: 160px 0;
+      color: white;
 
-			}
+    }
 
-		}
+    .attributes {
 
-	}
+      text-align: center;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      width: 100%;
 
-	.title {
+      .question {
 
-		text-align: center;
-		padding: 160px 0;
-		color: white;
+        margin-bottom: 20px;
 
-	}
+      }
 
-	.blue {
+      .attribute {
 
-		background: $blue;
+        width: 50%;
+        float: left;
+        margin: 0 auto;
 
-	}
+        @include respond-to(800) { width: 100%; }
 
-	.attributes {
+        .wrapper {
 
-		text-align: center;
-		border-top: 1px solid #ccc;
-		border-bottom: 1px solid #ccc;
+          padding: 40px;
+          @include respond-to(1024) { padding: 30px; }
+          @include respond-to(800) { padding: 20px; }
 
-		padding: 125px 0;
-		@include respond-to(640) { padding: 50px 0; }
+        }
 
-		width: 100%;
+        img {
 
-		.question {
+          width: 110px;
+          height: auto;
+          margin-bottom: 15px;
 
-			margin-bottom: 30px;
+        }
 
-		}
+      }
 
-		.attribute {
+      .attribute-alt {
 
-			width: 50%;
-			float: left;
-			margin: 0 auto;
+        width: 50%;
+        margin: 0 auto;
 
-			.wrapper {
+        .wrapper {
 
-				padding: 40px;
-				@include respond-to(640) { padding: 10px; }
+          padding: 40px;
 
-			}
+        }
 
-			img {
+        img {
 
-				width: 30%;
-				height: auto;
-				margin-bottom: 15px;
+          width: 30%;
+          height: auto;
+          margin-bottom: 15px;
 
-			}
+        }
 
-		}
+      }
 
-		.attribute-alt {
 
-			width: 50%;
-			margin: 0 auto;
+    } //attributes
 
-			.wrapper {
+    .milestones {
 
-				padding: 40px;
-				@include respond-to(640) { padding: 10px; }
+      text-align: center;
+      padding: 125px 0;
+      width: 100%;
 
-			}
+      .milestones-img {
 
-			img {
+        width: 100%;
+        text-align: right;
 
-				width: 30%;
-				height: auto;
-				margin-bottom: 15px;
+        img {
 
-			}
+          width: 100%;
 
-		}
+        }
 
+      }
 
-	} //attributes
+    } //milestones
 
-	.milestones {
+    .mentors {
 
-		text-align: center;
+      border-top: 1px solid #ccc;
+      padding: 125px 0;
+      width: 100%;
 
-		padding: 125px 0;
-		@include respond-to(640) { padding: 50px 0; }
+      .text {
 
-		width: 100%;
+        width: 60%;
+        text-align: right;
 
-		.milestones-img {
+        .inner {
 
-			width: 100%;
-			text-align: right;
+          padding: 60px;
 
-			img {
+        }
 
-				width: 100%;
+      }
 
-			}
+      .graphic {
 
-		}
+        width: 40%;
+        text-align: center;
 
-	} //milestones
+        img {
 
-	.mentors {
+          width: 80%;
+          height: auto;
+          max-width: 550px;
 
-		border-top: 1px solid #ccc;
+        }
 
-		padding: 125px 0;
-		@include respond-to(640) { padding: 50px 0; }
+      }
 
-		width: 100%;
+    } //mentors
 
-		.text {
+    .tool {
 
-			width: 60%;
-			text-align: right;
-			@include respond-to(640) {
-				width: 80%;
-				text-align: center;
-				margin: auto;
-				float: none;
-			}
+      background: $darkgrey;
+      color: white;
+      padding: 175px 0;
 
-			.inner {
+      .section-title {
 
-				padding: 60px;
-				@include respond-to(1280) { padding: 0 60px; }
-				@include respond-to(640) { padding: 0px; }
+        text-align: center;
+        margin-bottom: 80px;
 
-			}
+      }
 
-		}
+      .topper {
 
-		.graphic {
+        margin-bottom: 150px;
 
-			width: 40%;
-			text-align: center;
-			@include respond-to(640) {
-				margin: auto;
-				float: none;
-			}
+        .left-img, .right-img {
 
-			img {
+          width: 25%;
 
-				width: 80%;
-				height: auto;
-				max-width: 550px;
+          img {
 
-			}
+            width: 100%;
+            height: auto;
+            max-width: 500px;
 
-		}
+          }
 
-	} //mentors
+        }
 
-	.tool {
+        .left-img {
 
-		background: $darkgrey;
-		color: white;
-		padding: 175px 0 0 0;
-		@include respond-to(640) { padding: 100px 0 0 0; }
+          float: left;
 
-		.section-title {
+        }
 
-			text-align: center;
-			margin-bottom: 80px;
+        .imua-logo {
 
-		}
+          width: 50%;
+          text-align: center;
+          float: left;
 
-		.topper {
+          img {
 
-			margin-bottom: 150px;
-			@include respond-to(640) { margin-bottom: 100px; }
+            width: 60%;
+            height: auto;
+            max-width: 551px;
+            margin-bottom: 20px;
 
-			.left-img, .right-img {
+          }
 
-				width: 25%;
+        }
 
-				img {
+        .right-img {
 
-					width: 100%;
-					height: auto;
-					max-width: 500px;
+          float: right;
 
-				}
+        }
 
-			}
+      } //topper
 
-			.left-img {
+      .progress {
 
-				float: left;
+        padding: 100px 0;
+        border-top: 1px solid #555;
 
-			}
+        .scholar-chart {
 
-			.imua-logo {
+          width: 40%;
+          float: left;
 
-				width: 50%;
-				text-align: center;
-				float: left;
+          img {
 
-				img {
+            width: 100%;
+            height: auto;
+            max-width: 700px;
 
-					width: 60%;
-					height: auto;
-					max-width: 551px;
-					margin-bottom: 20px;
+          }
 
-				}
+        }
 
-			}
+        .text {
 
-			.right-img {
+          width: 60%;
+          float: left;
 
-				float: right;
+          .inner {
 
-			}
+            padding: 100px;
 
-		} //topper
+          }
 
-		.track-progress {
+        }
 
-			padding: 100px 0;
-			@include respond-to(640) { padding: 50px 0; }
+      } //progress
 
-			border-top: 1px solid #555;
+      .communication {
 
-			.scholar-chart {
+        padding: 100px 0;
+        border-top: 1px solid #555;
+        border-bottom: 1px solid #555;
+        margin-bottom: 50px;
 
-				width: 40%;
-				float: left;
-				@include respond-to(640) {
-					float: none;
-					margin: auto;
-				}
+        .phones {
 
-				img {
+          width: 50%;
+          float: left;
 
-					width: 100%;
-					height: auto;
-					max-width: 700px;
+          img {
 
-				}
+            width: 100%;
+            height: auto;
+            max-width: 700px;
 
-			}
+          }
 
-			.text {
+        }
 
-				width: 60%;
-				float: left;
-				@include respond-to(640) {
-					float: none;
-					margin: auto;
-					text-align: center;
-					width: 80%;
-				}
+        .text {
 
-				.inner {
+          width: 50%;
+          float: left;
 
-					padding: 100px;
-					@include respond-to(1280) { padding: 0 60px; }
-					@include respond-to(640) { padding: 20px 0 0 0; }
+          .inner {
 
-				}
+            padding: 100px 0px 100px 100px;
 
-			}
+          }
 
-		} //progress
+        }
 
-		.communication {
+      } //progress
 
-			padding: 100px 0;
-			@include respond-to(640) { padding: 50px 0; }
+      .display {
 
-			border-top: 1px solid #555;
-			border-bottom: 1px solid #555;
+        text-align: center;
 
-			.phones {
+      }
 
-				width: 50%;
-				float: left;
-				@include respond-to(640) {
-					float: none;
-					margin: auto;
-				}
 
-				img {
+    }
 
-					width: 100%;
-					height: auto;
-					max-width: 700px;
+  } //lower
 
-				}
+  /* ===============================================
+  Footer
+  =============================================== */
 
-			}
-
-			.text {
-
-				width: 50%;
-				float: left;
-				@include respond-to(640) {
-					float: none;
-					margin: auto;
-					text-align: center;
-					width: 80%
-				}
-
-				.inner {
-
-					padding: 100px 0px 100px 100px;
-					@include respond-to(1280) { padding: 0 0 60px 60px; }
-					@include respond-to(640) { padding: 0 0 10px 0; }
-
-				}
-
-			}
-
-		} //progress
-
-		.display {
-
-			text-align: center;
-
-		}
-
-
-	}
-
-} //lower
-
-/* ===============================================
-   Footer
-   =============================================== */
-
-.footer {
-
-	.section {
-		margin-bottom: 25px;
-
-		.text {
-
-			padding: 80px 0 40px 0;
-			text-align: center;
-
-		}
-
-	}
-
-} //footer
+  #footer {
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+  }
