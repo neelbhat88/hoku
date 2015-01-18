@@ -1,5 +1,6 @@
 Hoku::Application.routes.draw do
   get "home/home"
+  get '/involved' => 'home#involved'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

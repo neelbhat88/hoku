@@ -1,0 +1,22 @@
+.involvedContainer {
+
+  .top {
+    margin-top: 84px;
+
+    text-align: center;
+
+    .grey-bg {
+      background-color: $darkgrey;
+      color: white;
+    }
+
+    .section {
+      margin: auto;
+      padding-top: 80px;
+
+      max-width: 880px;
+    }
+
+  }
+
+}
