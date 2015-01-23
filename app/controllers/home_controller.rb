@@ -4,4 +4,10 @@ class HomeController < ApplicationController
 
   def involved
   end
+
+  def story
+  end
+
+  def team
+  end
 end
