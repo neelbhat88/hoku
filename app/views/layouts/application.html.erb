@@ -36,7 +36,12 @@
 
         <ul class="nav navbar-nav navbar-right">
 
-          <li><a href="http://news.hokuscholars.org">Our Blog</a></li>
+          <li><a href="/o4e" style="color: #27aae1" title="The 2015 Occasion For Education presented by Pullman Bank & Trust">
+            <span class="glyphicon glyphicon-star" style="font-size: 16px"></span>
+            The 2015 O4E!
+            <span class="glyphicon glyphicon-star" style="font-size: 16px"></span>
+          </a></li>
+          <li><a href="http://news.hokuscholars.org" target="_blank">Our Blog</a></li>
           <li><a href="/story">Our Story</a></li>
           <li><a href="/team">Our Team</a></li>
           <li><a href="/involved">Get Involved</a></li>
@@ -55,19 +60,21 @@
 <script>
   $(document).ready(function() {
     $(window).scroll(function() {
-      contentTop = $('#lower').position().top
-      header = $('header')
+      if (window.location.pathname == '/') {
+        contentTop = $('#lower').position().top
+        header = $('header')
 
-      if ($(window).scrollTop() >= contentTop - header.outerHeight() - 40 ) {
-        if (header.hasClass("transparent-nav"))
-        {
-          header.hide();
-          header.removeClass("transparent-nav");
-          header.fadeIn();
+        if ($(window).scrollTop() >= contentTop - header.outerHeight() - 40 ) {
+          if (header.hasClass("transparent-nav"))
+          {
+            header.hide();
+            header.removeClass("transparent-nav");
+            header.fadeIn();
+          }
         }
-      }
-      else {
-        header.addClass("transparent-nav");
+        else {
+          header.addClass("transparent-nav");
+        }
       }
 
     })
