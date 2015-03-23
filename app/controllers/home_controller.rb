@@ -10,4 +10,7 @@ class HomeController < ApplicationController
 
   def team
   end
+
+  def o4e
+  end
 end

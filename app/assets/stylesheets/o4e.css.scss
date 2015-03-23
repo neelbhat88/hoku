@@ -1,0 +1,51 @@
+.o4eContainer {
+
+  &.top-wrapper {
+    margin-top: 84px;
+  }
+
+  .o4e-header {
+    background: url('o4e_bg.jpg') top center fixed no-repeat;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+  }
+
+  .body {
+
+    .info {
+      text-align: center;
+      padding: 20px;
+      background-color: #272727;
+      color: white;
+
+    }
+
+    .content {
+      padding: 100px 40px 40px;
+      text-align: center;
+
+      border-bottom: 1px solid #ccc;
+
+      p { margin-bottom: 40px; }
+    }
+
+    .sponsors {
+      padding: 80px 40px;
+
+      text-align: center;
+
+      .main-sponsor {
+        padding: 60px 20px;
+
+        img { height: 120px; }
+      }
+
+      .other-sponsors {
+        img { height: 80px; margin-bottom:10px; margin-right: 20px; }
+      }
+
+    }
+  }
+
+}
