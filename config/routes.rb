@@ -4,6 +4,7 @@ Hoku::Application.routes.draw do
   get '/story' => 'home#story'
   get '/team' => 'home#team'
   get '/o4e' => 'home#o4e'
+  get '/o4e-2016' => 'home#o4e_2016'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -13,4 +13,7 @@ class HomeController < ApplicationController
 
   def o4e
   end
+
+  def o4e_2016
+  end
 end
